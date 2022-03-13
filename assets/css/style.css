@@ -1,0 +1,184 @@
+/* Modal */
+.modal__container {
+    background: url(https://images.unsplash.com/photo-1476842634003-7dcca8f832de?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.modal__container .bg-overlay {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.842);
+    min-width: 100vw;
+    min-height: 100vh;
+    display: none;
+}
+
+.modal__container.active .bg-overlay {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.842);
+    min-width: 100vw;
+    min-height: 100vh;
+    display: block !important;
+}
+
+.modal__container .modal__content {
+    z-index: 1;
+    max-width: 600px;
+    position: relative;
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.24);
+    transition: 0.4s ease;
+    -webkit-transition: 0.4s ease;
+    -moz-transition: 0.4s ease;
+    -ms-transition: 0.4s ease;
+    -o-transition: 0.4s ease;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    visibility: hidden;
+    width: 448px;
+    height: 223px;
+}
+
+.modal__container.active .first__modal,
+.modal__container.prompt .second__modal {
+    transform: translate(-50%, -60%);
+    -webkit-transform: translate(-50%, -60%);
+    -moz-transform: translate(-50%, -60%);
+    -ms-transform: translate(-50%, -60%);
+    -o-transform: translate(-50%, -60%);
+    visibility: visible;
+}
+
+.modal__container .second__modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.modal__container .modal__content .close__icon {
+    font-size: 19px;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.modal__container .modal__content .close__icon:active {
+    background: #23231bd1;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Accordian */
+.accordian {
+    max-width: 500px;
+    padding: 0;
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.452);
+}
+
+.accordian * {
+    color: white !important;
+}
+
+.accordian .item {
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+.accordian .item div.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    padding: 10px;
+    margin: 0;
+
+}
+
+.accordian .item .title h6 {
+    margin: 0px !important;
+    font-size: 18px;
+}
+
+.accordian .item div.body p,
+.accordian .item div.title {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.281);
+}
+
+.accordian .item:last-child div.body p {
+    border-bottom: none;
+}
+
+.accordian .item:last-child.active div.body p,
+.accordian .item:last-child div.body {
+    border-top: 1px solid rgba(255, 255, 255, 0.281);
+}
+
+.accordian .item:last-child div.title {
+    border: none;
+}
+
+.accordian .item .title .arrow {
+    padding: 0px 10px;
+    font-weight: 400;
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transition: 0.3s ease-in;
+    -webkit-transition: 0.3s ease-in;
+    -moz-transition: 0.3s ease-in;
+    -ms-transition: 0.3s ease-in;
+    -o-transition: 0.3s ease-in;
+}
+
+.accordian .item.active div.title .arrow.down__arow {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+}
+
+.accordian .item .body {
+    max-height: 0;
+    opacity: 1;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.281) !important;
+    transition: max-height 0.3s ease-in-out;
+    border: none !important;
+    -webkit-transition: max-height 0.3s ease-in-out;
+    -moz-transition: max-height 0.3s ease-in-out;
+    -ms-transition: max-height 0.3s ease-in-out;
+    -o-transition: max-height 0.3s ease-in-out;
+}
+
+.accordian .item .body>p {
+    padding: 10px !important;
+    margin: 0 !important;
+}
+
+.accordian .item.active .body {
+    opacity: 1;
+    max-height: 100vh;
+}
